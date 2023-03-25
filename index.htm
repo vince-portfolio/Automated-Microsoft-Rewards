@@ -1,0 +1,47 @@
+<span id="output"></span>
+
+<script>
+
+  ( async function ( ) {
+
+      const delayTime = await async function ( delayTime ) {
+        return await new Promise ( resolve => { setTimeout ( resolve , delayTime ) ; } ) ;
+      }
+
+      const microsoft_reward_tab = await window.open ( "" , '_blank' , noopener=true , noreferrer=true , popup=false ) ;
+
+      if ( await microsoft_reward_tab ) microsoft_reward_tab.name = "microsoft_reward_tab" ;
+
+      console.log( ` Tab Name := ${ await microsoft_reward_tab.name } . ` ) ;
+      console.log( " ------------------------------ " ) ;
+
+      document.getElementById( "output" ).innerHTML += ` Tab Name := ${ await microsoft_reward_tab.name } . <hr> <hr> ` ;
+
+      console.log( await microsoft_reward_tab ) ;
+      console.log( " ------------------------------ " ) ;
+      console.log( " ------------------------------ " ) ;
+
+      for ( let Year = 1950 ; Year <= 1975 ; Year ++ ) {
+
+        console.log( ` Movie ${Year} := https://www.bing.com/search?q=movie+${Year} . ` ) ;
+        console.log( " ------------------------------ " ) ;
+
+        document.getElementById( "output" ).innerHTML += ` Movie ${Year} := https://www.bing.com/search?q=movie+${Year} . <hr> ` ;
+
+        window.scrollTo(0, document.body.scrollHeight);
+
+        const microsoft_reward_tab = await window.open( `https://www.bing.com/search?q=movie+${Year}` , 'microsoft_reward_tab' , noopener=true , noreferrer=true , popup=false ) ;
+
+        console.log( await microsoft_reward_tab ) ;
+        console.log( " ------------------------------ " ) ;
+        console.log( " ------------------------------ " ) ;
+
+        const delay = await delayTime ( 13000 ) ;
+
+      }
+
+      microsoft_reward_tab.close ( ) ;
+
+  } )() ;
+
+</script>

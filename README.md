@@ -1,3 +1,3 @@
 # Microsoft-Rewards
 
-<h2> All Rights Reserved </h2>
+<h3> (C) Copyrighted, All Rights Reserved </h3>

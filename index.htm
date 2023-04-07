@@ -19,12 +19,12 @@
       }
 
       for ( let Year = 1951 ; Year <= (1975 - 22) ; Year ++ ) {
+        const delay = await delayTime ( 13000 ) ;
+        
         console.log( ` Movie ${Year} := https://www.bing.com/search?q=movie+${Year} . ` ) ;
         console.log( " ------------------------------ " ) ;
 
         document.getElementsByTagName( "iframe" )[0].src = `https://www.bing.com/search?q=movie+${Year}` ;
-        
-        const delay = await delayTime ( 13000 ) ;
       }
     } )() ;
   </script>

@@ -5,27 +5,7 @@
       height: 99vh;
       width: 99vw;
     "
-    src="https://www.bing.com/search?q=movie+1950"
+    src="https://www.bing.com/"
   >
   </iframe>
-
-  <script>
-    console.log( ` Movie 1950 := https://www.bing.com/search?q=movie+1950 . ` ) ;
-    console.log( " ------------------------------ " ) ;
-
-    ( async function ( ) {
-      const delayTime = await async function ( delayTime ) {
-          return await new Promise ( resolve => { setTimeout ( resolve , delayTime ) ; } ) ;
-      }
-
-      for ( let Year = 1951 ; Year <= (1975 - 22) ; Year ++ ) {
-        const delay = await delayTime ( 13000 ) ;
-        
-        console.log( ` Movie ${Year} := https://www.bing.com/search?q=movie+${Year} . ` ) ;
-        console.log( " ------------------------------ " ) ;
-
-        document.getElementsByTagName( "iframe" )[0].src = `https://www.bing.com/search?q=movie+${Year}` ;
-      }
-    } )() ;
-  </script>
 </body>

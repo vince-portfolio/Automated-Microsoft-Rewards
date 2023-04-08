@@ -1,13 +1,15 @@
 <body style="margin: 0; padding: 0;">
-  <iframe
+  <object
     style="
       margin: 0;
+      padding: 0;
       height: 99vh;
       width: 99vw;
     "
-    src="https://www.bing.com/search?q=movie+1950"
+    type="text/html"
+    data="https://www.bing.com/search?q=movie+1950"
   >
-  </iframe>
+  </object>
 
   <script>
     console.log( ` Movie 1950 := https://www.bing.com/search?q=movie+1950 . ` ) ;
@@ -23,9 +25,8 @@
 
         console.log( ` Movie ${Year} := https://www.bing.com/search?q=movie+${Year} . ` ) ;
         console.log( " ------------------------------ " ) ;
-
-        document.getElementsByTagName( "iframe" )[0].src = `https://www.bing.com/search?q=movie+${Year}` ;
-
+        
+        document.getElementsByTagName( "object" )[0].data = `https://www.bing.com/search?q=movie+${Year}` ;
       }
     } )() ;
   </script>

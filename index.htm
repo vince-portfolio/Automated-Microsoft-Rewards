@@ -1,34 +1,48 @@
-<body style="margin: 0; padding: 0;">
-  <embed
-    style="
-      margin: 0;
-      padding: 0;
-      border: 0;
-      height: 100vh;
-      width: 100vw;
-    "
-    type="text/html"
-    src="https://www.bing.com/search?q=movie+1950"
-  >
-  </embed>
+<span id="output"></span>
 
-  <script>
-    console.log( ` Movie 1950 := https://www.bing.com/search?q=movie+1950 . ` ) ;
-    console.log( " ------------------------------ " ) ;
+<script>
 
-    ( async function ( ) {
+  ( async function ( ) {
+
       const delayTime = await async function ( delayTime ) {
-          return await new Promise ( resolve => { setTimeout ( resolve , delayTime ) ; } ) ;
+        return await new Promise ( resolve => { setTimeout ( resolve , delayTime ) ; } ) ;
       }
 
-      for ( let Year = 1951 ; Year <= (1975 - 23) ; Year ++ ) {
-        const delay = await delayTime ( 13000 ) ;
+      const microsoft_reward_tab = await window.open ( "" , '_blank' , noopener=true , noreferrer=true , popup=false ) ;
+
+      if ( await microsoft_reward_tab ) microsoft_reward_tab.name = "microsoft_reward_tab" ;
+
+      console.log( ` Tab Name := ${ await microsoft_reward_tab.name } . ` ) ;
+      console.log( " ------------------------------ " ) ;
+
+      document.getElementById( "output" ).innerHTML += ` Tab Name := ${ await microsoft_reward_tab.name } . <hr> <hr> ` ;
+
+      console.log( await microsoft_reward_tab ) ;
+      console.log( " ------------------------------ " ) ;
+      console.log( " ------------------------------ " ) ;
+
+      for ( let Year = 1950 ; Year <= 1975 ; Year ++ ) {
 
         console.log( ` Movie ${Year} := https://www.bing.com/search?q=movie+${Year} . ` ) ;
         console.log( " ------------------------------ " ) ;
-        
-        document.getElementsByTagName( "embed" )[0].src = `https://www.bing.com/search?q=movie+${Year}` ;
+
+        document.getElementById( "output" ).innerHTML += ` Movie ${Year} := https://www.bing.com/search?q=movie+${Year} . <hr> ` ;
+
+        window.scrollTo(0, document.body.scrollHeight);
+
+        // const microsoft_reward_tab = await window.open( `https://www.bing.com/search?q=movie+${Year}` , 'microsoft_reward_tab' , noopener=true , noreferrer=true , popup=false ) ;
+        const microsoft_reward_tab = await window.open( `https://www.bing.com/search?q=movie+${Year}` , 'microsoft_reward_tab' , popup=false ) ;
+
+        console.log( await microsoft_reward_tab ) ;
+        console.log( " ------------------------------ " ) ;
+        console.log( " ------------------------------ " ) ;
+
+        const delay = await delayTime ( 13000 ) ;
+
       }
-    } )() ;
-  </script>
-</body>
+
+      microsoft_reward_tab.close ( ) ;
+
+  } )() ;
+
+</script>

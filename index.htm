@@ -1,7 +1,5 @@
 <body style="margin: 0; padding: 0;">
-
-<frameset>
-  <frame
+  <object
     style="
       margin: 0;
       padding: 0;
@@ -10,9 +8,9 @@
       width: 100vw;
     "
     type="text/html"
-    src="https://www.bing.com/search?q=movie+1950"
-  />
-</frameset>
+    data="https://www.bing.com/search?q=movie+1950"
+  >
+  <object>
 
   <script>
     console.log( ` Movie 1950 := https://www.bing.com/search?q=movie+1950 . ` ) ;
@@ -29,7 +27,7 @@
         console.log( ` Movie ${Year} := https://www.bing.com/search?q=movie+${Year} . ` ) ;
         console.log( " ------------------------------ " ) ;
         
-        document.getElementsByTagName( "frame" )[0].src = `https://www.bing.com/search?q=movie+${Year}` ;
+        document.getElementsByTagName( "object" )[0].data = `https://www.bing.com/search?q=movie+${Year}` ;
       }
     } )() ;
   </script>

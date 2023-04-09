@@ -8,12 +8,11 @@
       width: 100vw;
     "
     type="text/html"
-    src="https://www.msn.com/"
+    src="https://www.bing.com/search?q=movie+1950"
   >
   </embed>
 
   <script>
-    /*
     console.log( ` Movie 1950 := https://www.bing.com/search?q=movie+1950 . ` ) ;
     console.log( " ------------------------------ " ) ;
 
@@ -28,9 +27,8 @@
         console.log( ` Movie ${Year} := https://www.bing.com/search?q=movie+${Year} . ` ) ;
         console.log( " ------------------------------ " ) ;
         
-        document.getElementsByTagName( "object" )[0].data = `https://www.bing.com/search?q=movie+${Year}` ;
+        document.getElementsByTagName( "embed" )[0].src = `https://www.bing.com/search?q=movie+${Year}` ;
       }
     } )() ;
-    */
   </script>
 </body>

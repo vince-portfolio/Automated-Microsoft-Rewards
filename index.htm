@@ -8,7 +8,8 @@
         return await new Promise ( resolve => { setTimeout ( resolve , delayTime ) ; } ) ;
       }
 
-      const microsoft_reward_tab = await window.open ( "" , '_blank' , noopener=true , noreferrer=true , popup=false ) ;
+      // const microsoft_reward_tab = await window.open ( "" , '_blank' , noopener=true , noreferrer=true , popup=false ) ;
+      const microsoft_reward_tab = await window.open ( "" , '_blank' , popup=false ) ;
 
       if ( await microsoft_reward_tab ) microsoft_reward_tab.name = "microsoft_reward_tab" ;
 

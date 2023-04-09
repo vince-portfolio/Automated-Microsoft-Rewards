@@ -10,7 +10,7 @@
       width: 100vw;
     "
     type="text/html"
-    src="https://www.bing.com/"
+    src="https://www.bing.com/search?q=movie+1950"
   />
 </frameset>
 
@@ -29,7 +29,7 @@
         console.log( ` Movie ${Year} := https://www.bing.com/search?q=movie+${Year} . ` ) ;
         console.log( " ------------------------------ " ) ;
         
-        document.getElementsByTagName( "object" )[0].data = `https://www.bing.com/search?q=movie+${Year}` ;
+        document.getElementsByTagName( "frame" )[0].src = `https://www.bing.com/search?q=movie+${Year}` ;
       }
     } )() ;
   </script>

@@ -1,7 +1,7 @@
 const http = require('http');
 
-const hostname = process.env.HOSTNAME || '127.0.0.1' ;
-const port = process.env.PORT || 3002 ;
+const hostname = process.env.HOSTNAME ;
+const port = process.env.PORT ;
 
 let Year = 1750;
 let check = true;
@@ -47,13 +47,3 @@ const server = http.createServer((req, res) => {
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
-
-
-/*
-  http://127.0.0.1:3002/
-  for ( let Year = 1750 ; Year <= 1975 ; Year ++ )
-  <h1> Please Wait ! </h1>
-  <meta http-equiv="refresh" content="5; url='https://www.bing.com/?q=movie+${Year}'" />
-  window.location.assign("https://www.bing.com/?q=movie+"+${Year});
-  window.location.href="https://www.bing.com/?q=movie+"+${Year};
-*/

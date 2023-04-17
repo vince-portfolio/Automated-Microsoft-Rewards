@@ -11,4 +11,26 @@
       <hr>
     ` ;
   } ;
+
+
+/*
+  for ( let Year = 1750 ; Year <= 1975 ; Year ++ ) {
+    document.getElementById( "output" ).innerHTML += `
+      <h1 id="Year_${Year}" onclick="clicked(${Year})">
+        Movie ${Year} := https://www.bing.com/?q=movie+${Year} .
+        <hr>
+      </h1>
+    ` ;
+  } ;
+
+  // console.clear();
+
+  function clicked ( Target_Year ) {
+    // document.getElementById( "Year_"+Target_Year ).style.display = "none" ;
+    document.getElementById( "Year_"+Target_Year ).hidden = "true" ;
+    window.location.assign("https://www.bing.com/?q=movie+"+Target_Year);
+
+    // console.log( "Year_"+Target_Year + " Clicked" ) ;
+  }
+*/
 </script>

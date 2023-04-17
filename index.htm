@@ -2,7 +2,7 @@
 
 <script>
 /*
-  for ( let Year = 1750 ; Year <= 1975 ; Year ++ ) {
+  for ( let Year = 1750 ; Year < 1975 ; Year ++ ) {
     document.getElementById( "output" ).innerHTML += `
       <h1>
         Movie ${Year} := <a href="https://www.bing.com/?q=movie+${Year}">
@@ -15,7 +15,7 @@
 */
 
   
-  for ( let Year = 1750 ; Year <= 1975 ; Year ++ ) {
+  for ( let Year = 1750 ; Year < 1975 ; Year ++ ) {
     document.getElementById( "output" ).innerHTML += `
       <h1 id="Year_${Year}" onclick="clicked(${Year})">
         Movie ${Year} := https://www.bing.com/?q=movie+${Year} .
@@ -28,5 +28,4 @@
     document.getElementById( "Year_"+Target_Year ).hidden = "true" ;
     window.location.assign("https://www.bing.com/?q=movie+"+Target_Year);
   }
-*/
 </script>

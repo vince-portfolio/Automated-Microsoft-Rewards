@@ -1,31 +1,55 @@
-<span id="output"></span>
-
-<script>
-/*
-  for ( let Year = 1750 ; Year <= 1975 ; Year ++ ) {
-    document.getElementById( "output" ).innerHTML += `
-      <h1>
-        Movie ${Year} := <a href="https://www.bing.com/?q=movie+${Year}">
-                            https://www.bing.com/?q=movie+${Year}
-                          </a> .
-      </h1>
-      <hr>
-    ` ;
-  } ;
-*/
-
+<body
+  style="
+    background-color: black;
+    color: greenyellow;
+  "
+>
   
-  for ( let Year = 1750 ; Year <= 1975 ; Year ++ ) {
-    document.getElementById( "output" ).innerHTML += `
-      <h1 id="Year_${Year}" onclick="clicked(${Year})">
-        Movie ${Year} := https://www.bing.com/?q=movie+${Year} .
+  <span id="output"></span>
+
+  <style>
+    hr {
+      border:
+        0.75px
+        solid
+        yellowgreen
+      ;
+    }
+  </style>
+
+  <script>
+  /*
+    for ( let Year = 1750 ; Year <= 1975 ; Year ++ ) {
+      document.getElementById( "output" ).innerHTML += `
+        <h1>
+          Movie ${Year} := <a href="https://www.bing.com/?q=movie+${Year}">
+                              https://www.bing.com/?q=movie+${Year}
+                            </a> .
+        </h1>
         <hr>
-      </h1>
-    ` ;
-  } ;
-  
-  function clicked ( Target_Year ) {
-    document.getElementById( "Year_"+Target_Year ).hidden = "true" ;
-    window.location.assign("https://www.bing.com/?q=movie+"+Target_Year);
-  }
-</script>
+      ` ;
+    } ;
+  */
+
+
+    for ( let Year = 1750 ; Year <= 1975 ; Year ++ ) {
+      document.getElementById( "output" ).innerHTML += `
+        <h1 id="Year_${Year}" onclick="clicked(${Year})">
+          Movie ${Year} := https://www.bing.com/?q=movie+${Year} .
+          <hr>
+        </h1>
+      ` ;
+    } ;
+
+    // console.clear();
+
+    function clicked ( Target_Year ) {
+      // document.getElementById( "Year_"+Target_Year ).style.display = "none" ;
+      document.getElementById( "Year_"+Target_Year ).hidden = "true" ;
+      window.location.assign("https://www.bing.com/?q=movie+"+Target_Year);
+
+      // console.log( "Year_"+Target_Year + " Clicked" ) ;
+    }
+  </script>
+
+</body>

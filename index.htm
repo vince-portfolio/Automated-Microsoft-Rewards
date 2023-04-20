@@ -18,19 +18,6 @@
   </style>
 
   <script>
-  /*
-    for ( let Year = 1750 ; Year <= 1975 ; Year ++ ) {
-      document.getElementById( "output" ).innerHTML += `
-        <h1>
-          Movie ${Year} := <a href="https://www.bing.com/?q=movie+${Year}">
-                              https://www.bing.com/?q=movie+${Year}
-                            </a> .
-        </h1>
-        <hr>
-      ` ;
-    } ;
-  */
-
     const element_id = ( id ) => document.getElementById( id ) ;
 
     for ( let Year = 1750 ; Year <= 1975 ; Year ++ ) {
@@ -42,14 +29,9 @@
       ` ;
     } ;
 
-    // console.clear();
-
     function clicked ( Target_Year ) {
-      // element_id( "Year_"+Target_Year ).style.display = "none" ;
       element_id( "Year_"+Target_Year ).hidden = "true" ;
-      window.location.assign("https://www.bing.com/?q=movie+"+Target_Year);
-
-      // console.log( "Year_"+Target_Year + " Clicked" ) ;
+      window.location.assign("https://www.bing.com/?q=movie+"+Target_Year) ;
     }
   </script>
 

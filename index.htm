@@ -30,7 +30,7 @@
     } ;
 
     function clicked ( Target_Year ) {
-      element_id( "Year_"+Target_Year ).hidden = "true" ;
+      element_id( "Year_"+Target_Year ).remove() ;
       window.location.assign("https://www.bing.com/?q=movie+"+Target_Year) ;
     }
   </script>

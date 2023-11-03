@@ -1,3 +1,9 @@
+<style>
+h1 {
+  display: inline;
+}
+</style>
+
 <body
   style="
     background-color: black;
@@ -47,10 +53,10 @@
     const execute_button = function ( ) {
       execute = !execute ;
       if ( !execute ) {
-        element_id("execute_button").innerHTML = "Continue" ;
+        element_id("execute_button").innerHTML = "<h1> Continue </h1>" ;
         element_id("execute_button").style.backgroundColor = "green" ;
       } else {
-        element_id("execute_button").innerHTML = "Stop" ;
+        element_id("execute_button").innerHTML = "<h1> Stop </h1>" ;
         element_id("execute_button").style.backgroundColor = "red" ;
         run() ;
       }

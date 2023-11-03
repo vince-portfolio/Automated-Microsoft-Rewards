@@ -4,35 +4,165 @@
     color: greenyellow;
   "
 >
-  
+
   <span id="output"></span>
+
+  <button
+    id="execute_button"
+    onclick="execute_button()"
+    style="
+      background-color: red;
+      color: yellowgreen;
+      margin-left: 3vw;
+    "
+  >
+    Stop
+  </button>
+
+  
+  <span style="margin-left: 3vw;"> Extra Round </span>
+  <input
+    type="checkbox"
+    id="extra_round"
+    checked
+  >
+  <!--checked-->
 
   <style>
     hr {
       border:
         0.75px
         solid
-        yellowgreen
+        green
       ;
     }
   </style>
 
   <script>
-    const element_id = ( id ) => document.getElementById( id ) ;
 
-    for ( let Year = 1750 ; Year <= 1975 ; Year ++ ) {
-      element_id( "output" ).innerHTML += `
-        <h1 id="Year_${Year}" onclick="clicked(${Year})">
-          Movie ${Year} := https://www.bing.com/?q=movie+${Year} .
-          <hr>
-        </h1>
-      ` ;
+    const element_id = ( id ) => document.getElementById( id ) ;
+    
+    let execute = true ;
+
+    const execute_button = function ( ) {
+      execute = !execute ;
+      if ( !execute ) {
+        element_id("execute_button").innerHTML = "Continue" ;
+        element_id("execute_button").style.backgroundColor = "green" ;
+      } else {
+        element_id("execute_button").innerHTML = "Stop" ;
+        element_id("execute_button").style.backgroundColor = "red" ;
+        run() ;
+      }
     } ;
 
-    function clicked ( Target_Year ) {
-      element_id( "Year_"+Target_Year ).remove() ;
-      window.location.assign("https://www.bing.com/?q=movie+"+Target_Year) ;
-    }
+    let Year = 1975 ;
+
+    const run = async function ( ) {
+
+      /* const delay = await async function ( delayTime ) {
+        return await new Promise ( await async function resolve() { await setTimeout ( resolve , delayTime ) ; } ) ;
+      } */
+
+      /* const delay = await async function ( delayTime ) {
+        return await new Promise ( resolve = function() { setTimeout ( resolve() , delayTime ) ; } ) ;
+      } */
+
+      // learn Promise
+
+      /* const delay = await async function ( delayTime ) {
+        return await new Promise ( resolve => { setTimeout ( resolve , delayTime ) ; } ) ;
+      } */
+
+      const delayTime = await async function ( delayTime ) {
+        return await new Promise ( resolve => { setTimeout ( resolve , delayTime ) ; } ) ;
+      }
+
+      const microsoft_reward_tab = await window.open ( "" , '_blank' , noopener=true , noreferrer=true , popup=false ) ;
+
+      if ( await microsoft_reward_tab ) microsoft_reward_tab.name = "microsoft_reward_tab" ;
+
+      console.log( ` Tab Name := ${ await microsoft_reward_tab.name } . ` ) ;
+      console.log( " ------------------------------ " ) ;
+
+      element_id( "output" ).innerHTML += ` Tab Name := ${ await microsoft_reward_tab.name } . <hr> <hr> ` ;
+
+      console.log( await microsoft_reward_tab ) ;
+      console.log( " ------------------------------ " ) ;
+      console.log( " ------------------------------ " ) ;
+
+      /* ****** ?create a mobile phone edition? ****** */
+
+      // for ( let Year = 1976 ; Year <= 2026 ; Year ++ ) {
+      while ( execute ) {
+
+        Year++ ;
+
+        // ( 2026 - 48 )
+
+        console.log( ` Movie ${Year} := https://www.bing.com/search?q=movie+${Year} . ` ) ;
+        console.log( " ------------------------------ " ) ;
+
+        element_id( "output" ).innerHTML += ` Movie ${Year} := https://www.bing.com/search?q=movie+${Year} . <hr> ` ;
+
+        // WORK GOOD := element_id( 'output' ).innerHTML += 'Movie ' + Year + ' := https://www.bing.com/search?q=movie+' + Year + ' . <hr id="' + Year + '"> ' ;
+
+        // NOT WORK GOOD := element_id( `${ Year }` ).focus( ) ;
+
+        // NOT WORK GOOD := element_id( "" + Year + "" ).focus( { focusVisible: true } ) ;
+
+        // WORK GOOD := element_id( Year ).scrollIntoView() ;
+
+        window.scrollTo(0, document.body.scrollHeight);
+
+        // const microsoft_reward_tab = await window.open( "https://www.bing.com/search?q=movie+" + Year , "microsoft_reward_tab" , noopener=true , noreferrer=true , popup=false ) ;
+
+        const microsoft_reward_tab = await window.open( `https://www.bing.com/search?q=movie+${Year}` , 'microsoft_reward_tab' , noopener=true , noreferrer=true , popup=false ) ;
+
+        console.log( await microsoft_reward_tab ) ;
+        console.log( " ------------------------------ " ) ;
+        console.log( " ------------------------------ " ) ;
+
+        const delay = await delayTime ( 13000 ) ;
+        // in milisecond. 1,000 or 1k miliseconds = 1 second.
+
+        // const wait = await delay ( 13000 ) ;
+
+        if ( (Year == 2010) && (!element_id("extra_round").checked)  ) { execute_button() } ;
+        if ( Year == 2015 ) { execute_button() } ;
+        if ( Year == 2026 ) { execute_button() } ;
+
+      }
+
+      microsoft_reward_tab.close ( ) ;
+      console.log ( " -------- WINDOW CLOSE -------- " ) ;
+      console.log ( " ------------------------------ " ) ;
+      console.log ( " ------------------------------ " ) ;
+
+    } ;
+
+    run() ;
+
+  // "https://www.bing.com/search?q=movie+1725&qs=n&form=QBRE&sp=-1&lq=0&pq=&sc=0-0&sk=&cvid=6B7606EAF0AE4D84BDF1A81DDD6CB3C3&ghsh=0&ghacc=0&ghpl="
+
+  /*    if ( await response ) {
+        // let response = await microsoft_reward_tab.close(); 
+        let response = await window.open("https://www.bing.com/search?q=movie+1990&qs=n&form=QBRE&sp=-1&lq=0&pq=&sc=0-0&sk=&cvid=6B7606EAF0AE4D84BDF1A81DDD6CB3C3&ghsh=0&ghacc=0&ghpl=", 'microsoft_reward_tab', noopener=true, noreferrer=true, popup=false) ;
+        console.log( await microsoft_reward_tab ) ;
+        console.log( "------------------------------" ) ;
+      }*/
+
+  // microsoft_reward_tab.onload = function() { microsoft_reward_tab.close() } ;
+  // microsoft_reward_tab.addEventListener("load", function() { microsoft_reward_tab.close() } );
+
+  // let response = await response.json ( ) ;
+  // let response = JSON.parse( microsoft_reward_tab ) ;
+  // console.log( microsoft_reward_tab.JSON.parse() ) ;
+  // console.log( microsoft_reward_tab.JSON.stringify() ) ;
+  // console.log( microsoft_reward_tab.String() ) ;
+  // console.log( microsoft_reward_tab.String().fromCharCode() ) ; 
+  // console.log( microsoft_reward_tab.String().fromCodePoint() ) ;
+
   </script>
 
 </body>

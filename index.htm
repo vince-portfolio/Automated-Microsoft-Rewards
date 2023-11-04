@@ -1,5 +1,5 @@
 <style>
-h1 {
+h2 {
   display: inline;
 }
 </style>
@@ -11,7 +11,7 @@ h1 {
   "
 >
 
-  <h1 id="output"></h1>
+  <h2 id="output"></h3>
 
   <button
     id="execute_button"
@@ -22,11 +22,11 @@ h1 {
       margin-left: 3vw;
     "
   >
-    <h1> Stop </h1>
+    <h2> Stop </h2>
   </button>
 
   
-  <h1 style="margin-left: 3vw;"> Extra Round </h1>
+  <h2 style="margin-left: 3vw;"> Extra Round </h2>
   <input
     type="checkbox"
     id="extra_round"
@@ -53,10 +53,10 @@ h1 {
     const execute_button = function ( ) {
       execute = !execute ;
       if ( !execute ) {
-        element_id("execute_button").innerHTML = "<h1> Continue </h1>" ;
+        element_id("execute_button").innerHTML = "<h2> Continue </h2" ;
         element_id("execute_button").style.backgroundColor = "green" ;
       } else {
-        element_id("execute_button").innerHTML = "<h1> Stop </h1>" ;
+        element_id("execute_button").innerHTML = "<h2> Stop </h2>" ;
         element_id("execute_button").style.backgroundColor = "red" ;
         run() ;
       }
